@@ -1,39 +1,24 @@
 import java.util.Scanner;
 public class Fatorial {
 public static void main(String[] args) {
-Scanner scanner = new Scanner(System.in);
-try {
-System.out.print("Digite um número para calcular o fatorial:
-");
-3
-int numero = Integer.parseInt(scanner.nextLine());
-int resultado = calcularFatorial(numero);
-System.out.printf("O fatorial de %d é: %d%n", numero,
-resultado);
-} catch (NegativeNumberException ex) {
-System.out.println("Erro: " + ex.getMessage());
-} catch (NumberFormatException ex) {
-System.out.println("Erro: Por favor, insira um número inteiro
-válido.");
-} finally {
-scanner.close();
-}
-}
-// Método recursivo para calcular o fatorial
-public static int calcularFatorial(int numero) throws
-NegativeNumberException {
+Scanner entrada = new Scanner(System.in);
+System.out.print("Digite um número inteiro positivo para calcular o
+fatorial: ");
+int numero = entrada.nextInt();
 if (numero < 0) {
-throw new NegativeNumberException("Número negativo: o fatorial
-não pode ser calculado.");
+throw new AssertionError("Erro: O número deve ser não
+negativo.");
 }
-if (numero == 0 || numero == 1) {
-return 1;
+12
+System.out.println("Fatorial de " + numero + " é: " +
+calcularFatorial(numero));
+entrada.close();
 }
-return numero * calcularFatorial(numero - 1);
+public static long calcularFatorial(int numero) {
+long resultado = 1;
+for (int i = 1; i <= numero; i++) {
+resultado *= i;
 }
-}
-class NegativeNumberException extends Exception {
-public NegativeNumberException(String mensagem) {
-super(mensagem);
+return resultado;
 }
 }
