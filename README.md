@@ -1,4 +1,4 @@
-# Programação Orientada a Objetos (POO) – 2024.2
+# Programação Orientada a Objetos (POO) 
 
 Repositório com os trabalhos, exercícios e projetos desenvolvidos durante a disciplina **Programação Orientada a Objetos** no curso de Ciência da Computação.
 
